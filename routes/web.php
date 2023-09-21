@@ -31,6 +31,7 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/export', [DashboardController::class, 'export'])->name('dashboard.export');
 
     Route::get('/upload', [UploadController::class, 'index'])->name('upload');
     Route::post('/upload', [UploadController::class, 'store'])->name('upload.store');
